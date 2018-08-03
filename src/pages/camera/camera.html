@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+    <img [src]="myImage || 'assets/imgs/logo.png'" />
+  </div>
+  <button (click)="getImage()" id="camera-button2" ion-button color="balanced" block icon-left>
+    <ion-icon name="camera"></ion-icon>
+    Take Picture
+  </button>
+  <button (click)="share()" id="camera-button3" ion-button color="calm" block icon-left>
+    <ion-icon name="share-alt"></ion-icon>
+    Share with Others
+  </button>
+</ion-content>

@@ -1,16 +1,30 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CartPage } from '../pages/cart/cart';
+import { CloudPage } from '../pages/cloud/cloud';
+import { MapPage } from '../pages/map/map';
+import { CameraPage } from '../pages/camera/camera';
+import { GoogleMapPage } from '../pages/google-map/google-map';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { OneSignal } from '@ionic-native/onesignal';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CartPage,
+    CloudPage,
+    MapPage,
+    CameraPage,
+    GoogleMapPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +33,24 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CartPage,
+    CloudPage,
+    MapPage,
+    CameraPage,
+    GoogleMapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation,
+    Camera,
+    SocialSharing,
+    OneSignal,
   ]
 })
-export class AppModule {}
+
+export class AppModule {
+  
+}
